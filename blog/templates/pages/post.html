@@ -1,0 +1,38 @@
+{% extends "pages/base.html" %} {% block title %}Blog{% endblock %} 
+{% load static %} {% block content %}
+<div id="main-wrapper">
+  <div class="wrapper style3">
+    <div class="inner">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 col-12-medium">
+            <!-- Spotlight -->
+            <section class="box spotlight">
+              <h3 class="">Xem nhiều</h3>
+              <article>
+              <p>aaa</p>
+              </article>
+            </section>
+            <hr />
+          </div>
+          <div class="col-8 col-12-medium">
+            <!-- Article list -->
+            <section class="box article-list">
+              {% for data in Datas %}
+                <p>aaa</p>
+              {% endfor %}
+              <!-- Excerpt -->
+              <h3>{{post.title}}</h3>
+              <h6>on {{post.date}}</h6>
+              <center>
+                <img src="{{post.image.url}}" width="100%" height="300px" />
+              </center>
+              {{post.content|safe|linebreaks}}
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

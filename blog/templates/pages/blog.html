@@ -1,0 +1,56 @@
+{% extends "pages/blogBase.html" %}
+{% block title %} Blog {% endblock %} 
+{% load static %}
+{% block content %}
+<div id="main-wrapper">
+  <div class="wrapper style3">
+    <div class="inner">
+      <div class="container">
+        <div class="row">
+        <div class="col-3 col-12-medium">
+            <!-- Spotlight -->
+            <section class="box spotlight">
+              <h2 class="icon fa-file-alt">Spotlight</h2>
+              <article>
+                <a href="#" class="image featured"><img src="/static/images/pic07.jpg" alt=""
+                /></a>
+                <header>
+                  <h3><a href="#">Neural Implants</a></h3>
+                </header>
+              </article>
+            </section><hr>
+          </div>
+          <div class="col-9 col-12-medium">
+            <!-- Article list -->
+            <section class="box article-list">
+              <h2 class="icon fa-file-alt">Recent Posts</h2>
+              
+              <!-- Excerpt -->
+              {% for post in Posts %}
+                <article class="box excerpt">
+                <div class="row">
+                  <div class="col-5">
+                    <a href="/blog/{{post.id}}">
+                      <img src="{{post.image.url}}" height="210px" width="350px" alt=""/>
+                  </a>
+                  </div>
+                  <div class="col-7">
+                    <header>
+                      <span class="date">{{post.date|date:"d-m-Y"}}</span>
+                      <h3><a href="{% url 'post' post.id%}">{{post.title}}</a></h3>
+                    </header>
+                    <p>{{post.description}}</p><hr>
+                    <span>{{post.author}}</span>
+                  </div>
+                </div>
+              </article>
+              {% endfor %}
+            </section>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

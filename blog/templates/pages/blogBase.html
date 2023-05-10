@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    {% include "pages/include/blogHead.html" %}
+  <body>
+  <div id="page-wrapper">
+    {% include "pages/include/blogHeader.html" %}
+    {% block content %}{% endblock %}
+    {% include "pages/include/blogFooter.html" %}
+  </div>
+  <script src="{% static 'js/jquery.min.js'%}"></script>
+	<script src="{% static 'js/jquery.dropotron.min.js'%}"></script>
+	<script src="{% static 'js/browser.min.js'%}"></script>
+	<script src="{% static 'js/breakpoints.min.js'%}"></script>
+	<script src="{% static 'js/util.js'%}"></script>
+	<script src="{% static 'js/main.js'%}"></script>                
+</body>
+</html>
